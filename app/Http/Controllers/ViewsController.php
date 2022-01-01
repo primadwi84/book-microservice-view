@@ -11,13 +11,9 @@ class ViewsController extends Controller
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 6|BefdT13vDh4xwJueLrmRHBKGk8CrKOsVNRhHi5fr'
+            'Authorization' => 'Bearer 2|OUzqPs3K5u8vpazlNES56HjiXDHsAYvJCMphmFma'
         ])->get('http://127.0.0.1:8081/api/products');
-
-        $data = $response->json();
-        dd($data);
-
-        $title="Data Dashboard";     
-        return view('takes', compact('title','data'));
+        $data = $response->json();   
+        return view('products.index', compact('data'));
     }
 }

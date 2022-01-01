@@ -36,13 +36,13 @@
                                     @foreach ($data as $products) 
                                         <tr>
                                             <td scope="row">{{ $loop->iteration}}</td>
-                                            <td>{{ $products->NAMA }}</td>
-                                            <td>{{ $products->HARGA_BELI}}</td>
-                                            <td>{{ $products->HARGA_JUAL}}</td>
-                                            <td>{{ $products->STOK }}</td>
+                                            <td>{{ $products['NAMA']}}</td>
+                                            <td>{{ $products['HARGA_BELI']}}</td>
+                                            <td>{{ $products['HARGA_JUAL']}}</td>
+                                            <td>{{ $products['STOK']}}</td>
                                             <td>
-                                                <a href="/catalog/{{$products->id}}/edit" class="btn btn-outline-success btn-sm mr-2">Edit</a>
-                                                <a href="{{$products->id}}/delete" class="btn btn-outline-danger btn-sm" id="btn-hapus">Hapus</a>
+                                                <a href="/catalog/{{$products['id']}}/edit" class="btn btn-outline-success btn-sm mr-2">Edit</a>
+                                                <a href="{{$products['id']}}/delete" class="btn btn-outline-danger btn-sm" id="btn-hapus">Hapus</a>
                                             </td>
                                         </tr>
                                     @endforeach
