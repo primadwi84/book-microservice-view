@@ -41,7 +41,7 @@
                                             <td>{{ $products['HARGA_JUAL']}}</td>
                                             <td>{{ $products['STOK']}}</td>
                                             <td>
-                                                <a href="/catalog/{{$products['id']}}/edit" class="btn btn-outline-success btn-sm mr-2">Edit</a>
+                                                <a href="/first/{{$products['id']}}/edit" class="btn btn-outline-success btn-sm mr-2">Edit</a>
                                                 <a href="{{$products['id']}}/delete" class="btn btn-outline-danger btn-sm" id="btn-hapus">Hapus</a>
                                             </td>
                                         </tr>
@@ -57,7 +57,7 @@
 </section>
     <div class="modal fade" id="modal-create">
         <div class="modal-dialog">
-            <form method="post" action="/" class="modal-content">
+            <form method="post" action="/store" class="modal-content">
                 <div class="modal-header">
                 <h4 class="modal-title">Tambah Produk</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

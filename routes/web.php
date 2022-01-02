@@ -25,3 +25,8 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/first',[ViewsController::class,'index']);
+Route::get('/create', [ViewsController::class, 'create']);
+Route::post('/store', [ViewsController::class, 'store']); //INSERT DATA
+Route::get('/first/{id}/edit', [ViewsController::class, 'edit']);
+Route::patch('/first/{id}/update', [ViewsController::class, 'update']);
+Route::get('{id}/delete', [ViewsController::class, 'delete']);
