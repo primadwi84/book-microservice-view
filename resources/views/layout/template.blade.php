@@ -48,6 +48,16 @@
         <a href="/" class="nav-link text-white">@yield('judul')</a>
       </li>
     </ul>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <a href="{{ route('logout') }}" class="btn bg-custom rounded text-white"
+          onclick="event.preventDefault();
+            this.closest('form').submit();">
+          {{ __('Logout') }}
+        </a>
+      </form>
+    </div>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
