@@ -24,6 +24,7 @@
                                     <tr>
                                         <th scope="col">id</th>
                                         <th scope="col">Judul Buku</th>
+                                        <th scope="col">Harga</th>
                                         <th scope="col">Refunded</th>
                                         <th scope="col">Created at</th>
                                         <th scope="col">aksi</th>
@@ -34,6 +35,7 @@
                                         <tr>
                                             <td scope="row">{{ $loop->iteration}}</td>
                                             <td>{{ $sales['product']['NAMA']}}</td> 
+                                            <td>{{ $sales['product']['HARGA_JUAL']}}</td> 
                                             <td>{{ $sales['REFUND']}}</td>
                                             <td>{{ $sales['created_at']}}</td>
                                             <td>

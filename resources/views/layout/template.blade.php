@@ -38,7 +38,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand" style="background:rebeccapurple">
+  <nav class="main-header navbar navbar-expand" style="background:#052c4f">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -84,7 +84,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-navy elevation-4" style="background:#3b2E5A">
+  <aside class="main-sidebar sidebar-dark-navy elevation-4" style="background:#031a2f">
     <!-- Brand Logo -->
     <!-- <a href="/" class="brand-link">
       <span class="brand-text font-weight-light">Tugas Statistik</span>
@@ -108,10 +108,10 @@
             <div class="input-group input-group-sm" style="color:indigo">
             <input name="cari" class="form-control" type="search" placeholder="Search by Name" aria-label="Search">
               <div class="input-group-append">
-                <button class="btn" style="background:rebeccapurple" type="submit">
+                <button class="btn" style="background:#052c4f" type="submit">
                   <i class="fas fa-search" style="color:white"></i>
                 </button>
-                <button class="btn" style="background:rebeccapurple" type="button" data-widget="navbar-search" >
+                <button class="btn" style="background:#052c4f" type="button" data-widget="navbar-search" >
                   <i class="fas fa-times" style="color:white"> </i>
                 </button>
               </div>
@@ -121,10 +121,10 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-3">
-        <ul class="nav nav-sidebar flex-column" style="background:rebeccapurple" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-sidebar flex-column" style="background:#052c4f" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="menu-open" style="color:rebeccapurple">
+          <li class="menu-open" style="color:#052c4f">
             <a href="/first" class="nav-link active">
               <i class="nav-icon fas fa-users" style="color:white"></i>
               <p>
@@ -133,7 +133,7 @@
             </a>
           </li>
 
-          <li class="menu-open" style="color:rebeccapurple">
+          <li class="menu-open" style="color:#052c4f">
             <a href="/sales" class="nav-link active">
               <i class="nav-icon fas fa-users" style="color:white"></i>
               <p>
@@ -142,7 +142,7 @@
             </a>
           </li>
 
-          <!-- <li class="menu-open" style="color:rebeccapurple">
+          <!-- <li class="menu-open" style="color:#052c4f">
             <a href="/refunds" class="nav-link active">
               <i class="nav-icon fas fa-users" style="color:white"></i>
               <p>
@@ -183,7 +183,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer text-white" style="background:rebeccapurple">
+  <footer class="main-footer text-white" style="background:#052c4f">
     <!-- <strong>&copy; Gita Mulya</strong> -->
     <!-- <div class="float-right d-none d-sm-inline-block">
       <b>Tugas Statistik</b>

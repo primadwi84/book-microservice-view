@@ -21,7 +21,7 @@
                                 @if ($notif["category"] == 'new-book')
                                 {{$notif["title"]}} <span class="badge badge-primary">new book</span>
                                 @elseif ($notif["category"] == 'product-alert')
-                                {{$notif["title"]}} <span class="badge badge-danger">alert</span>
+                                {{$notif["title"]}} <span class="badge bg-warning">alert</span>
                                 @else
                                 @endif
                             </div>
@@ -31,7 +31,6 @@
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                         </div>
-                        
                         @endforeach
                     </div>
                 </div>
