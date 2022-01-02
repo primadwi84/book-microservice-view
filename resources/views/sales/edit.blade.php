@@ -13,16 +13,15 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body p-2 ml-3 mr-3"> 
-            <form method="post" action="/sales/{{$data->id}}/update">
+            <form method="post" action="/sales/{{$data['id']}}/update">
                     @method('patch') 
                     @csrf
-                    
                     <div class="form-group">
                             <select class="form-control select2" style="width: 100;" name="product_id" id="product_id">
                                 <option disabled value>Pilih Judul Buku</option>
-                                <option value="{{$data->product_id}}">{{$data->product->NAMA}}</option>
+                                <option value="{{$data['product_id']}}">{{$data["product"]["NAMA"]}}</option>
                                 @foreach ($pro as $item)
-                                <option value="{{$item->id}}">{{$item->NAMA}}</option>
+                                <option value="{{$item['id']}}">{{$item['NAMA']}}</option>
                                 @endforeach
                             </select>
                      </div>

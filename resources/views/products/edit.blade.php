@@ -47,7 +47,7 @@
                     
                     <div class="d-flex justify-content-end">
                         <button type="sumbit" class="btn btn-outline-primary mr-2">Simpan</button>
-                        <a href="/edit" class="btn btn-outline-danger">Batal</a>
+                        <a href="/first" class="btn btn-outline-danger">Batal</a>
                     </div>
             </form>
         </div>

@@ -33,12 +33,12 @@
                                     @foreach ($data as $sales) 
                                         <tr>
                                             <td scope="row">{{ $loop->iteration}}</td>
-                                            <td>{{ $sales->product->NAMA}}</td>
-                                            <td>{{ $sales->REFUND}}</td>
-                                            <td>{{ $sales->created_at}}</td>
+                                            <td>{{ $sales['product']['NAMA']}}</td> 
+                                            <td>{{ $sales['REFUND']}}</td>
+                                            <td>{{ $sales['created_at']}}</td>
                                             <td>
-                                                <a href="/sales/{{$sales->id}}/edit" class="btn btn-outline-success btn-sm mr-2">Edit</a>
-                                                <a href="/sales/{{$sales->id}}/delete" class="btn btn-outline-danger btn-sm" id="btn-hapus">Hapus</a>
+                                                <a href="/sales/{{$sales['id']}}/edit" class="btn btn-outline-success btn-sm mr-2">Edit</a>
+                                                <a href="/sales/{{$sales['id']}}/delete" class="btn btn-outline-danger btn-sm" id="btn-hapus">Hapus</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -67,7 +67,7 @@
                            <select class="form-control select2" style="width: 100;" name="product_id" id="product_id" value="{{old('NAMA')}}">
                            <option disabled value>Pilih Judul Buku</option>
                            @foreach ($pro as $item)
-                           <option value="{{$item->id}}">{{$item->NAMA}}</option>
+                           <option value="{{$item['id']}}">{{$item['NAMA']}}</option>
                             @endforeach
                            </select>
                         </div>
