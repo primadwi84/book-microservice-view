@@ -126,7 +126,7 @@
                with font-awesome or any other icon font library -->
           <li class="menu-open" style="color:#052c4f">
             <a href="/first" class="nav-link active">
-              <i class="nav-icon fas fa-users" style="color:white"></i>
+            <i class="fas fa-book mr-3"style="color:white"></i>
               <p>
                 Catalog
               </p>
@@ -135,9 +135,17 @@
 
           <li class="menu-open" style="color:#052c4f">
             <a href="/sales" class="nav-link active">
-              <i class="nav-icon fas fa-users" style="color:white"></i>
+            <i class="fas fa-shopping-cart mr-3" style="color:white"></i>
               <p>
                 Sales
+              </p>
+            </a>
+          </li>
+          <li class="menu-open" style="color:#052c4f">
+            <a href="/refunds" class="nav-link active">
+            <i class="fas fa-undo mr-3" style="color:white"></i>
+              <p>
+                Refunds
               </p>
             </a>
           </li>

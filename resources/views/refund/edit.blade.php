@@ -13,23 +13,24 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body p-2 ml-3 mr-3"> 
-            <form method="post" action="/refunds/{{$data->id}}/update">
+            <form method="post" action="/refunds/{{$data['id']}}/update">
                     @method('patch') 
                     @csrf
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <label for="ID_SALES">id sales<span style="color: red; display:block; float:right">*</label>
-                        <input type="text" class="form-control @error('ID_SALES') is-invalid @enderror" id="ID_SALES" placeholder="Masukkan ID_SALES Mahasiswa" name="ID_SALES" value="{{$data->ID_SALES}}">
+                        <input type="text" class="form-control @error('ID_SALES') is-invalid @enderror" id="ID_SALES" placeholder="Masukkan ID_SALES" name="ID_SALES" value="{{$data['ID_SALES']}}">
                         @error('ID_SALES')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="RESELLABLE">resellable<span style="color: red; display:block; float:right">*</label>
-                        <input type="text" class="form-control @error('RESELLABLE') is-invalid @enderror" id="RESELLABLE" placeholder="Masukkan RESELLABLE Mahasiswa" name="RESELLABLE" value="{{$data->RESELLABLE}}">
-                        @error('RESELLABLE')
-                        <div class="invalid-feedback">{{$message}}</div>
-                        @enderror
-                    </div>
+                        <label for="RESELLABLE">RESELLABLE</label>
+                        <select class="form-control select2" style="width: 100;" name="RESELLABLE" id="RESELLABLE"
+                            value="{{$data['RESELLABLE']}}">
+                            <option value=0>NO</option>
+                            <option value=1>YES</option>
+                        </select>
+                        </div>
                     <div class="d-flex justify-content-end">
                         <button type="sumbit" class="btn btn-outline-primary mr-2">Simpan</button>
                         <a href="/refunds" class="btn btn-outline-danger">Batal</a>

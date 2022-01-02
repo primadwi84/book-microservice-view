@@ -40,7 +40,8 @@
                                             <td>{{ $sales['created_at']}}</td>
                                             <td>
                                                 <a href="/sales/{{$sales['id']}}/edit" class="btn btn-outline-success btn-sm mr-2">Edit</a>
-                                                <a href="/sales/{{$sales['id']}}/delete" class="btn btn-outline-danger btn-sm" id="btn-hapus">Hapus</a>
+                                                <a href="/sales/{{$sales['id']}}/delete" class="btn btn-outline-danger btn-sm mr-2" id="btn-hapus">Hapus</a>
+                                                <a href="/refunds/create/{{$sales['id']}}" class="btn btn-outline-warning btn-sm">Refund</a>
                                             </td>
                                         </tr>
                                     @endforeach

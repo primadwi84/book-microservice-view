@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewsController;
 use App\Http\Controllers\NodeAPIController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\RefundsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,10 @@ Route::post('/sales', [SalesController::class, 'store']);
 Route::get('/sales/{id}/edit', [SalesController::class, 'edit']);
 Route::patch('/sales/{id}/update', [SalesController::class, 'update']);
 Route::get('/sales/{id}/delete', [SalesController::class, 'delete']);
+
+Route::get('/refunds',[RefundsController::class,'index']);
+Route::get('/refunds/create/{id}', [RefundsController::class, 'create']);
+Route::post('/refunds', [RefundsController::class, 'store']);
+Route::get('/refunds/{id}/edit', [RefundsController::class, 'edit']);
+Route::patch('/refunds/{id}/update', [RefundsController::class, 'update']);
+Route::get('/refunds/{id}/delete', [RefundsController::class, 'delete']);
