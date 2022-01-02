@@ -115,7 +115,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="menu-open" style="color:rebeccapurple">
-            <a href="/catalog" class="nav-link active">
+            <a href="/first" class="nav-link active">
               <i class="nav-icon fas fa-users" style="color:white"></i>
               <p>
                 Catalog

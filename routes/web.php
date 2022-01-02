@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewsController;
+use App\Http\Controllers\SalesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,10 @@ Route::post('/store', [ViewsController::class, 'store']); //INSERT DATA
 Route::get('/first/{id}/edit', [ViewsController::class, 'edit']);
 Route::patch('/first/{id}/update', [ViewsController::class, 'update']);
 Route::get('{id}/delete', [ViewsController::class, 'delete']);
+
+Route::get('/sales',[SalesController::class,'index']);
+Route::get('/sales/create', [SalesController::class, 'create']);
+Route::post('/sales', [SalesController::class, 'store']);
+Route::get('/sales/{id}/edit', [SalesController::class, 'edit']);
+Route::patch('/sales/{id}/update', [SalesController::class, 'update']);
+Route::get('/sales/{id}/delete', [SalesController::class, 'delete']);
