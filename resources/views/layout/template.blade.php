@@ -149,6 +149,14 @@
               </p>
             </a>
           </li>
+          <li class="menu-open" style="color:#052c4f">
+            <a href="/notif" class="nav-link active">
+            <i class="far fa-bell mr-3" style="color:white"></i>
+              <p>
+                Notifikasi
+              </p>
+            </a>
+          </li>
 
           <!-- <li class="menu-open" style="color:#052c4f">
             <a href="/refunds" class="nav-link active">
