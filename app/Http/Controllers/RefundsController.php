@@ -7,18 +7,20 @@ use Illuminate\Support\Facades\Http;
 
 class RefundsController extends Controller
 {
+    private $token ="6|nxAW1GISxNGii1RkqmsFC7FNB01vbgK0ZOOH3zHn" ;
     public function index()
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B'
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/refunds');
         $data = $response->json();  
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B'
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/products');
-        $pro = $response->json();   
+        $pro = $response->json(); 
+        // dd($data);
         return view('refund.index', compact('data', 'pro'));
     }
     public function create($id)
@@ -37,7 +39,7 @@ class RefundsController extends Controller
         ]);
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->post('http://127.0.0.1:8081/api/refunds',[
             'ID_SALES' => $request->ID_SALES,
             'RESELLABLE' => $request->RESELLABLE
@@ -48,12 +50,12 @@ class RefundsController extends Controller
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/refunds/'.$id);
         $data = $response->json(); 
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B'
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/products');
         $pro = $response->json();   
         return view('refund.edit', compact('data', 'pro'));
@@ -70,7 +72,7 @@ class RefundsController extends Controller
         ]);
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->patch('http://127.0.0.1:8081/api/refunds/'.$id ,[
             'ID_SALES' => $request->ID_SALES,
             'RESELLABLE' => $request->RESELLABLE
@@ -83,7 +85,7 @@ class RefundsController extends Controller
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->delete('http://127.0.0.1:8081/api/refunds/'.$id,[
         ]);
         return redirect('/refunds')->with('status', 'Data Berhasil Dihapus');

@@ -7,18 +7,21 @@ use Illuminate\Support\Facades\Http;
 
 class SalesController extends Controller
 {
+    private $token ="6|nxAW1GISxNGii1RkqmsFC7FNB01vbgK0ZOOH3zHn" ;
     public function index()
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B'
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/sales');
         $data = $response->json();  
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B'
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/products');
-        $pro = $response->json();   
+        
+        $pro = $response->json();  
+        // dd($data); 
         return view('sales.index', compact('data', 'pro'));
     }
     public function create()
@@ -36,7 +39,7 @@ class SalesController extends Controller
         ]);
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->post('http://127.0.0.1:8081/api/sales',[
             'REFUND' => $request->REFUND,
             'product_id' => $request->product_id
@@ -48,12 +51,12 @@ class SalesController extends Controller
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/sales/'.$id);
         $data = $response->json(); 
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B'
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/products');
         $pro = $response->json();   
         return view('sales.edit', compact('data', 'pro'));
@@ -68,7 +71,7 @@ class SalesController extends Controller
         ]);
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->patch('http://127.0.0.1:8081/api/sales/'.$id ,[
             'REFUND' => $request->REFUND
         ]);
@@ -80,7 +83,7 @@ class SalesController extends Controller
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->delete('http://127.0.0.1:8081/api/sales/'.$id,[
         ]);
         return redirect('/sales')->with('status', 'Data Berhasil Dihapus');

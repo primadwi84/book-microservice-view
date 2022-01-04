@@ -7,11 +7,12 @@ use Illuminate\Support\Facades\Http;
 
 class ViewsController extends Controller
 {
+    private $token ="6|nxAW1GISxNGii1RkqmsFC7FNB01vbgK0ZOOH3zHn" ;
     public function index()
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B'
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/products');
         $data = $response->json();   
         return view('products.index', compact('data'));
@@ -39,7 +40,7 @@ class ViewsController extends Controller
 
         $response = Http::withHeaders([
                 'Accept' => 'application/json',
-                'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+                'Authorization' => 'Bearer '. $this->token
             ])->post('http://127.0.0.1:8081/api/products',[
                 'NAMA' => $request->NAMA,
                 'HARGA_BELI' => $request->HARGA_BELI,
@@ -55,7 +56,7 @@ class ViewsController extends Controller
         
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->get('http://127.0.0.1:8081/api/products/'.$id);
         $data = $response->json(); 
         return view('products.edit', ['data' => $data]);
@@ -77,7 +78,7 @@ class ViewsController extends Controller
         ]);
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->patch('http://127.0.0.1:8081/api/products/'.$id ,[
             'NAMA' => $request->NAMA,
             'HARGA_BELI' => $request->HARGA_BELI,
@@ -93,7 +94,7 @@ class ViewsController extends Controller
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'Authorization' => 'Bearer 4|EBTMVvKeP0HnmF86VPWFxFNYXk3TL0dIKnlaJz9B '
+            'Authorization' => 'Bearer '. $this->token
         ])->delete('http://127.0.0.1:8081/api/products/'.$id,[
         ]);
         return redirect('/first')->with('status', 'Data Berhasil Dihapus');
